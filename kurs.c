@@ -12,7 +12,7 @@
 #define CENTER_X (WIDTH/2)
 #define CENTER_Y (HEIGHT/2)
 #define RADIUS 200
-void draw_hand(SDL_Renderer *ren,double ugol,int dlinaStrelki,int tolshinaStrelki,SDL_Color color){// функция для рисования стрелк часов
+void risovaneiSTRELOK(SDL_Renderer *ren,double ugol,int dlinaStrelki,int tolshinaStrelki,SDL_Color color){// функция для рисования стрелк часов
     double radiani;
     int X2,Y2,i;
     radiani=(ugol-90)*3.14/180.0;// перевод из градусов в радианы
@@ -23,7 +23,7 @@ void draw_hand(SDL_Renderer *ren,double ugol,int dlinaStrelki,int tolshinaStrelk
         SDL_RenderDrawLine(ren,CENTER_X+i,CENTER_Y+i,X2+i,Y2+i);
     }
 }
-void draw_numbers(SDL_Renderer *ren,TTF_Font *font,SDL_Color color){// функция для рисования цифр на циферблате
+void risovanieTSIFR(SDL_Renderer *ren,TTF_Font *font,SDL_Color color){// функция для рисования цифр на циферблате
     char buf[3];
     double ugol;
     int i,x,y;

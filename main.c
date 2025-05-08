@@ -96,16 +96,16 @@ int main(int argc, char *argv[]) {
                 SDL_RenderDrawPoint(ren,x,y);
             }
         }
-        draw_numbers(ren, font, peredniyFon);//рисование цифр 1-12
+        risovanieTSIFR(ren, font, peredniyFon);//рисование цифр 1-12
         chasUGOL=((infaOVremeni.tm_hour % 12)+infaOVremeni.tm_min/60.0)*30;//углы поворота стрелок
         minUGOL=(infaOVremeni.tm_min+infaOVremeni.tm_sec/60.0)*6;
         secUGOL=infaOVremeni.tm_sec * 6;
         SDL_Color chasTSVET={200, 0, 0, 255};//цвета стрелок
         SDL_Color minTSVET={0, 100, 200, 255};
         SDL_Color secTSVET={0, 200, 80, 255};
-        draw_hand(ren,chasUGOL,RADIUS-90,8,chasTSVET);//отрисовка стрелок
-        draw_hand(ren,minUGOL,RADIUS-60,5,minTSVET);
-        draw_hand(ren,secUGOL,RADIUS-40,2,secTSVET);
+        risovanieSTRELOK(ren,chasUGOL,RADIUS-90,8,chasTSVET);//отрисовка стрелок
+        risovanieSTRELOK(ren,minUGOL,RADIUS-60,5,minTSVET);
+        risovanieSTRELOK(ren,secUGOL,RADIUS-40,2,secTSVET);
         SDL_RenderPresent(ren);//отображение всего на экране
         if (infaOVremeni.tm_sec != last_sec){//воспроизведение тика если секунда изменилась
             last_sec = infaOVremeni.tm_sec;
